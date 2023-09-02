@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: rgb(173, 220, 204);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(36, 5, 79);
+}
+h3{
+    color: rgb(40, 40, 210);
+    cursor: pointer;
+}
+.image-item{
+    width: 50dvh;
+    height: 50dvh;
+    border-radius: 5%;
+    margin-bottom: 1rem;
+    
+    
+}
+.buy-product-cell{
+    margin: 5rem auto;
+    grid-template-rows: 3fr 1fr 1fr;
+    margin-left: 10dvw;
+    background-color: azure;
+    display: inline-block;
+    padding: 16px;
+}
