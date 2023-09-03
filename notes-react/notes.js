@@ -64,3 +64,91 @@ const MainPart = () =>{
     <h1>This is the main part</h1>
   )
 };
+
+
+//props etc -
+const Book = (props) =>{
+  return(
+    <article>
+      <img src={img} alt="" />
+      <h1>{BookName}</h1>
+      <h4>{author}</h4>
+      <p>{props.job}</p> 
+    </article>
+  )
+}
+
+const ImageItem = () =>{
+  return (
+    <>
+    <img src="https://th.bing.com/th/id/OIP.nFtlTeqHyG2yQqh5olfSLgHaEK?pid=ImgDet&rs=1" alt=""  className="image-item"/>
+    </>
+  );
+};
+
+const buyMessage = "Click here to buy a tour"
+
+const BuyLink = () =>{
+  return (
+    <>
+    <h3>{buyMessage}</h3>
+    </>
+
+  );
+}
+
+const ProductPrice = (props3) =>{
+  return (
+    <>
+    <h5>{props3.price}</h5>
+    </>
+  );
+} 
+
+function ItemDetail(){
+  return (
+    <>
+
+    
+    
+      {/* better way to display a lot of similar objects with different prop values- store in array and then loop over to display */}
+      
+        
+
+        
+      
+      {/* /* { <BuyProductCell img={PlaceList[0].img} title={PlaceList[0].title} price={PlaceList[0].price}/>
+      <BuyProductCell img={PlaceList[1].img} title={PlaceList[1].title} price={PlaceList[1].price}/>
+
+      <BuyProductCell img={PlaceList[2].img} title={PlaceList[2].title} price={PlaceList[2].price}>
+        <p>stuff that we want to add directly between the tage </p>
+  </BuyProductCell>     old way of doing stuff */ }
+      
+
+      
+    
+      
+</>
+    
+  )
+
+};
+
+// what we want to put in between tags wont just appear on the screen magically
+// we need to put a special argument and use that inside the function to make any
+// extra stuff appear inside the component {children}we add children as argument in the function of the component and then put {children} where we want the extra stuff to appear
+
+
+
+const BuyProductCell = (props) => {
+  return (<>
+  <section className="buy-product-cell">
+    <img src={props.img} alt=""  className="image-item"/>
+    <h3>{props.title}</h3>
+    <h5>{props.price}</h5>
+
+  </section>
+  
+  </>);
+
+}
