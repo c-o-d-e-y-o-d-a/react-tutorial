@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM  from "react-dom";
-
+import PlaceList  from "./PlaceList";//this is how you export something from a file
 import './index.css';//we import this like this bc we made this file 
 
 
@@ -8,24 +8,12 @@ import './index.css';//we import this like this bc we made this file
 
 
 
-const PlaceList = [{img: "https://th.bing.com/th/id/OIP.nFtlTeqHyG2yQqh5olfSLgHaEK?pid=ImgDet&rs=1",
-  title:"Sweden",
-  price:323},
-  {
-  img: "https://th.bing.com/th/id/OIP.nFtlTeqHyG2yQqh5olfSLgHaEK?pid=ImgDet&rs=1",
-  title:"India",
-  price:33
-},
-{
-  img: "https://th.bing.com/th/id/OIP.nFtlTeqHyG2yQqh5olfSLgHaEK?pid=ImgDet&rs=1",
-  title:"Pakistan",
-  price:-3434
-}
 
 
 
 
-];
+
+
 
   // function ItemDetail(){
   //   return (
@@ -45,7 +33,7 @@ function ItemDetail(){
   return(
     <section>
       {PlaceList.map((place)=>{
-        return <BuyProductCell place={place}/>
+        return <BuyProductCell key={place.id} place={place}/>
       })}
     </section>
   )
@@ -92,7 +80,9 @@ const UpperHeading = () =>{
 //   return (<>
 //   <section className="buy-product-cell">
 //     <img src={img} alt=""  className="image-item"/>
+
 //     <h3>{title}</h3>
+
 //     <h5>{price}</h5>
 //     {children}
 
