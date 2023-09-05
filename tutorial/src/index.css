@@ -10,23 +10,73 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(36, 5, 79);
 }
-h3{
-    color: rgb(40, 40, 210);
-    cursor: pointer;
-}
-.image-item{
-    width: 50dvh;
-    height: 50dvh;
-    border-radius: 5%;
-    margin-bottom: 1rem;
-    
-    
-}
-.buy-product-cell{
-    margin: 5rem auto;
-    grid-template-rows: 3fr 1fr 1fr;
-    margin-left: 10dvw;
+.navbar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    padding-right: 2dvw;
+    padding-top: 2.5dvh;
+    padding-bottom: 2dvh;
+    font-size: 1.2rem;
     background-color: azure;
-    display: inline-block;
-    padding: 16px;
+}
+.navbar > *{
+    justify-self: end;
+}
+.navbar .right-side{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 1dvw;
+}
+.container-footer{
+    display: grid;
+    min-height: 20dvh;
+    grid-template-rows: 3fr 1fr;
+    background-color: rgb(178, 234, 215);
+    margin-top: 10dvh;
+    
+}
+.social-icons-div{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-self: center;
+}
+.social-icons{
+    width: 3dvw;
+    height: 3dvw;
+}
+.footer-bottom{
+    font-size: 1.2rem;
+    justify-self: center;
+}
+
+.buy-cell{
+    display: grid;
+    grid-template-rows: 4fr 1fr 1fr;
+    background-color: rgb(195, 195, 45);
+    border-radius: 10%;
+    justify-self: center;
+    width: 30dvw;
+    
+    margin-top: 3dvh;
+}
+.price{
+    font-size: 1.4rem;
+    margin-top: 3dvh;
+    margin-left: 2dvh;
+}
+.product-details{
+    font-size: 1.2rem;
+    margin-left: dvh;
+
+}
+
+.mainbody{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2dvw;
+    
+}
+.mainbody>*{
+    max-width: 30dvw;
 }
