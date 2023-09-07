@@ -1,16 +1,49 @@
 import './App.css';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function App(){
-  return(
+function App() {
+  const [todoList, setToDoList] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  const handleChange = (event) => {
+    setNewTask(event.target.value);
+  };
+
+  const addTaskInList = () => {
+    const newToDoList = [...todoList, newTask];
+    setToDoList(newToDoList);
+    setNewTask(''); // Clear the input field after adding a task
+  };
+
+  const removeTask = (taskArg) => {
+    const newArr = todoList.filter((task) => task !== taskArg);
+    setToDoList(newArr);
+  };
+
+  return (
     <div className='TodoLIst-container'>
-      <div className='addTasks'></div>
-       
+      <div className='addTasks'>
+        <input type="text" value={newTask} onChange={handleChange} />
+        <button className='addTask' onClick={addTaskInList}>
+          Add Task
+        </button>
+      </div>
+      <div className='task-list'>
+        {todoList.map((task, ind) => (
+          <div className='task' key={ind}>
+            <div className='indexval'>{ind}</div>
+            <div className='task-content'>{task}</div>
+            <div className='button'>
+              <button onClick={() => removeTask(task)}>Remove task</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  ) 
+  );
 }
-  
+
+
 
 
 

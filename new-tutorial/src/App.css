@@ -1,4 +1,31 @@
 *{
-  background-color: rgb(21, 150, 150);
+  background-color: rgb(104, 236, 236);
   text-align: center;
+}
+input{
+  font-size: 1.5rem;
+  border: 1px solid white;
+
+}
+button{
+  margin-left: 20dvw;
+  border: 2px solid white;
+  padding: 6px 12px 6px 12px;
+}
+.task{
+  margin-bottom: 9dvh;
+  
+  border: 1px solid black ;
+}
+.task>*{
+  display: inline-block;
+}
+
+.task-list{
+  margin-top: 5dvh;
+  background-color: aqua;
+  height: 70dvh;
+}
+.indexval{
+  margin-right: 3dvw;
 }
