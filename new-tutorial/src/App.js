@@ -1,45 +1,29 @@
 import './App.css';
-import React, { useState } from 'react';
 
-function App() {
-  const [todoList, setToDoList] = useState([]);
-  const [newTask, setNewTask] = useState('');
 
-  const handleChange = (event) => {
-    setNewTask(event.target.value);
-  };
 
-  const addTaskInList = () => {
-    const newToDoList = [...todoList, newTask];
-    setToDoList(newToDoList);
-    setNewTask(''); // Clear the input field after adding a task
-  };
 
-  const removeTask = (taskArg) => {
-    const newArr = todoList.filter((task) => task !== taskArg);
-    setToDoList(newArr);
-  };
 
-  return (
-    <div className='TodoLIst-container'>
-      <div className='addTasks'>
-        <input type="text" value={newTask} onChange={handleChange} />
-        <button className='addTask' onClick={addTaskInList}>
-          Add Task
-        </button>
-      </div>
-      <div className='task-list'>
-        {todoList.map((task, ind) => (
-          <div className='task' key={ind}>
-            <div className='indexval'>{ind}</div>
-            <div className='task-content'>{task}</div>
-            <div className='button'>
-              <button onClick={() => removeTask(task)}>Remove task</button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+//context hook is used to remove prop drilling frm one component to another
+import Form1 from './pages/Form1';
+
+function App(){
+  
+  return(
+    <div className='App'>
+      <Form1/>
+     
+       
+  
+
+
+
+     </div>
   );
 }
 
@@ -65,6 +49,253 @@ function App() {
 
 
 
+
+//Better way to do api calls
+
+
+
+//  <QueryClientProvider client={client}>
+//     <Router>
+//          <div>
+//            <Link to="/">Home</Link>
+//            <Link to="/menu">Menu</Link>
+//            <Link to="/contact">Contact</Link>
+//          </div>
+         
+//          <Routes>
+//            <Route path='/' element={<Home />} />           
+//            <Route path='/menu' element={<Menu />} />
+//          <Route path='/contact' element={<Contact username={username}/>} />
+//          </Routes>
+//       </Router>
+//    </QueryClientProvider>
+
+
+
+
+
+
+
+
+// import './App.css';
+
+
+
+
+// import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+
+// import Contact from './pages/Contact';
+// import Home from './pages/Home';
+// import Menu from './pages/Menu';
+// import { useState,createContext } from 'react';//third hook - createcontext
+// //context hook is used to remove prop drilling frm one component to another
+
+
+
+// import {QueryClient,QueryClientProvider} from "@tanstack/react-query";
+
+
+
+
+
+
+
+
+
+
+
+
+// export const AppContext = createContext();
+
+// function App(){
+//   const[username,setUserName] = useState('nischal');
+
+//   return(
+//     <div className='App'>
+       
+//       <AppContext.Provider value={{username,setUserName}}>
+//    <Router>
+//          <div>
+//            <Link to="/">Home</Link>
+//            <Link to="/menu">Menu</Link>
+//            <Link to="contact">Contact</Link>
+//          </div>
+         
+//          <Routes>
+//            <Route path='/' element={<Home />} />           
+//            <Route path='/menu' element={<Menu />} />
+//          <Route path='/contact' element={<Contact username={username}/>} />
+//          </Routes>
+//       </Router>
+
+
+
+
+// </AppContext.Provider>
+//      </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//how react router works  
+// import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+
+// import Contact from './pages/Contact';
+// import Home from './pages/Home';
+// import Menu from './pages/Menu';
+
+// function App(){
+//   return(
+//     
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//code to call apis and use the info in your project
+
+
+// import React, { useState,useEffect } from 'react';
+// import Axios from 'axios';
+
+
+// function App(){
+//   const [advice,setAdvice] =useState('');
+
+
+//   const getAdvice = () =>{
+    
+//     Axios.get("https://api.adviceslip.com/advice").then((res)=>{
+//     setAdvice(res.data.slip.advice);
+//   })
+  
+
+
+
+//   }
+//   useEffect(()=>{
+//     getAdvice();
+//   },[]);
+
+//   const getCatFacts = () =>{
+//     Axios.get("https://catfact.ninja/fact").then((res)=>{
+//       setAdvice(res.data.fact);
+//     }
+//     )
+//   }
+
+//   useEffect(()=>{
+//     getCatFacts();
+//   },[]);
+
+
+
+  
+//   return (
+//     <>
+//     <button className='butt' onClick={getAdvice}>Get Sasti Advice </button>
+//     <button className='butt' onClick={getCatFacts}>Get Cat Facts </button>
+
+//     <h1>Here's what you wanted: </h1>
+//     <h2>{advice}</h2>
+  
+//     </>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const [todoList, setToDoList] = useState([]);
+//   const [newTask, setNewTask] = useState('');
+
+//   const handleChange = (event) => {
+//     setNewTask(event.target.value);
+//   };
+
+//   const addTaskInList = () => {
+//     const newToDoList = [...todoList, newTask];
+//     setToDoList(newToDoList);
+//     setNewTask('');
+//     // Clear the input field after adding a task
+//   };
+
+//   const removeTask = (taskArg) => {
+//     const newArr = todoList.filter((task) => task !== taskArg);
+//     setToDoList(newArr);
+//   };
+ 
+
+  // return (
+  //   <div className='TodoLIst-container'>
+  //     <div className='addTasks'>
+  //       <input type="text" value={newTask} onChange={handleChange} />
+  //       <button className='addTask' onClick={addTaskInList}>
+  //         Add Task
+  //       </button>
+  //     </div>
+  //     <div className='task-list'>
+  //       {todoList.map((task, ind) => (
+  //         <div className='task' key={ind}>
+  //           <div className='indexval'>{ind}</div>
+  //           <div className='task-content'>{task}</div>
+            
+  //           <div className='button'>
+  //             <button onClick={() => removeTask(task)}>Remove task</button>
+  //           </div>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </div>
 
 
 

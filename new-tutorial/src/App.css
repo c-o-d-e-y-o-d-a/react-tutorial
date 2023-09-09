@@ -5,6 +5,7 @@
 input{
   font-size: 1.5rem;
   border: 1px solid white;
+  margin-top: 5dvh;
 
 }
 button{
@@ -29,3 +30,8 @@ button{
 .indexval{
   margin-right: 3dvw;
 }
+
+h1{
+  font-size: 2rem;
+}
+
