@@ -6,17 +6,31 @@ import './App.css';
 
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
-import Contact from './pages/Contact';
+import Login from './pages/Login';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 //context hook is used to remove prop drilling frm one component to another
-import Form1 from './pages/Form1';
+import { Provider } from 'react-redux';
+
 
 function App(){
   
   return(
     <div className='App'>
-      <Form1/>
+      <Provider store={store}>
+
+        <Router>
+        <Routes>
+          <Route path="/Home" element={<Home/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Menu" element={<Menu/>}/>
+        </Routes>
+      </Router>
+
+      </Provider>
+
+      
+      
      
        
   
